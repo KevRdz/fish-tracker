@@ -11,7 +11,7 @@ function index(req, res){
 }
 
 function create(req, res) {
-  // req.body.owner = req.user.profile._id
+  req.body.owner = req.user.profile._id
 	// req.body.tasty = !!req.body.tasty
   Fish.create(req.body)
   .then(fish => {
