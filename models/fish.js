@@ -5,7 +5,8 @@ const Schema = mongoose.Schema
 const fishSchema = new Schema({
   name: String,
   catch: String,
-  owner:  {type: Schema.Types.ObjectId, ref: "Profile"}
+  weight: Number,
+  owner:  {type: Schema.Types.ObjectId, ref: "Fish"}
 }, {
   timestamps: true
 })
@@ -13,5 +14,5 @@ const fishSchema = new Schema({
 const Fish = mongoose.model('Fish', fishSchema)
 
 export {
-  Profile
+  Fish
 }
