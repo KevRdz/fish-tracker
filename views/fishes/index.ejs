@@ -2,11 +2,20 @@
 <%- include("../partials/nav") %>
 
 <section>
-
-
-<h1>Fisheesss</h1>
-
-
-</section>
+  <h1>Fishees</h1>
+  <% if (user) { %>
+    <h2>Add a Fish you've caught</h2>
+    <form action="/fishes" method="POST">
+      <label>
+        Name of Fish: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <select name="catch" id="catch">
+        <option value="Kept">Kept</option>
+        <option value="Released">Released</option>
+      </select>
+      <button type="submit">Add Fish</button>
+    </form>
+  <% } %>
 
 <%- include("../partials/footer") %>
