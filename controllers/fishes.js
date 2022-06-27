@@ -1,12 +1,16 @@
 import { Fish } from '../models/fish.js'
 
-function newFishes(req, res){
-  res.render("fishes/new", {
-    title: "Add Fishes"
+function index(req, res){
+  Fish.find({})
+  .then(fishes => {
+    res.render('fishes/index', {
+      fishes: fishes,
+      title: "Fisshees",
+    })
   })
 }
 
 export {
-  newFishes as new,
+  index,
 
 }
