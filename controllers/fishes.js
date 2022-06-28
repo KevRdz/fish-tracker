@@ -23,8 +23,14 @@ function create(req, res) {
   })
 }
 
+function newFish(req, res){
+  res.render("fishes/new", {
+    title: "Add Fishes"
+  })
+}
+
 export {
   index,
   create,
-
+  newFish as new,
 }

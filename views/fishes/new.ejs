@@ -1,9 +1,10 @@
 <%- include("../partials/html-head") %>
 <%- include("../partials/nav") %>
 
-<section>
-  <!-- <h1>Fishees</h1>
-  <%# if (user) { %>
+
+
+  <h1>Fishees</h1>
+  <% if (user) { %>
     <h2>Add a Fish you've caught</h2>
     <form action="/fishes" method="POST">
       <label>
@@ -20,19 +21,6 @@
       </select>
       <button type="submit">Add Fish</button>
     </form>
-  <%# } %> -->
-  <h1>All the Fishees!</h1>
-  <h2>
+  <% } %>
 
-    <ul>
-      <% fishes.forEach(fish => { %>
-        <li>
-          
-          <a href="/fishes/<%= fish._id %>"><%= fish.name %></a>
-        </li>
-        <% }) %>
-      </ul>
-    </h2>
-    </section>
-
-<%- include("../partials/footer") %>
+  <%- include("../partials/footer") %>

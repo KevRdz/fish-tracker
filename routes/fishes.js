@@ -7,7 +7,8 @@ const router = Router()
 //GET localhost:3000/fishes
 router.get('/', fishesCtrl.index)
 
-//
+router.get('/new', fishesCtrl.new)
+
 router.post('/', isLoggedIn, fishesCtrl.create)
 
 export {
