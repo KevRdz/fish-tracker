@@ -12,7 +12,7 @@ function index(req, res){
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
-	// req.body.tasty = !!req.body.tasty
+	req.body.caught = !!req.body.caught
   Fish.create(req.body)
   .then(fish => {
     res.redirect('/fishes')

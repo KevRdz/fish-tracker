@@ -15,10 +15,9 @@
         Weight (in lb):
         <input type="text" name="weight">
       </label>
-      <select name="catch" id="catch">
-        <option value="Kept">Kept</option>
-        <option value="Released">Released</option>
-      </select>
+      <label for="date-caught">Date Caught<input type="date" name="dateCaught"></label>
+      <label for="caught-checkbox">Released?</label>
+      <input type="checkbox" name="caught">
       <button type="submit">Add Fish</button>
     </form>
   <% } %>
