@@ -4,11 +4,13 @@
 </head>
 <body>
   <nav>
-    <a href="/">Home</a>
     <% if (user) { %>
+      <a href="/">Home</a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
+      <a href="/fishes">View My Fish</a>
+      <a href="/fishes/new">Add A Fish</a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
@@ -16,6 +18,4 @@
         </button>
       </a>
       <% } %>
-      <a href="/fishes">View My Fish</a>
-      <a href="/fishes/new">Add A Fish</a>
   </nav>

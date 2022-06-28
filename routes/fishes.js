@@ -11,6 +11,9 @@ router.get('/new', fishesCtrl.new)
 
 router.post('/', isLoggedIn, fishesCtrl.create)
 
+router.get('/:id', fishesCtrl.show)
+
+
 export {
   router
 }

@@ -4,8 +4,9 @@ const Schema = mongoose.Schema
 
 const fishSchema = new Schema({
   name: String,
-  catch: String,
+  caught: Boolean,
   weight: Number,
+  catchDate: Date,
   owner:  {type: Schema.Types.ObjectId, ref: "Fish"}
 }, {
   timestamps: true

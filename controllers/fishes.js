@@ -29,8 +29,24 @@ function newFish(req, res){
   })
 }
 
+function show(req, res){
+  Fish.findById(req.params.id)
+  .populate("owner")
+  .then(fish => {
+    res.render('fishes/show', {
+      fish: fish,
+      title: "Fish Deetails"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/fishes')
+  })
+}
+
 export {
   index,
   create,
   newFish as new,
+  show,
 }
