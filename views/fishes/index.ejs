@@ -23,7 +23,7 @@
   <%# } %> -->
   <h1><%= title %> </h1>
   <h2>
-
+    <%# if (fishes.owner.equals(user?.profile._id)) { %>
     <ul>
       <% fishes.forEach(fish => { %>
         <li>
@@ -32,6 +32,7 @@
         </li>
         <% }) %>
       </ul>
+      <%# } %>
     </h2>
     </section>
 

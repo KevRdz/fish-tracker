@@ -5,7 +5,7 @@ function index(req, res) {
   .then(profiles => {
     res.render('profiles/index', {
       profiles,
-      title: Anglers,
+      title: "Anglers",
     })
   })
   .catch(err => {
@@ -14,6 +14,23 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
+    res.render("profiles/show", {
+      title: `${profile.name}'s Profile`,
+      profile,
+      isSelf,
+    })
+  })
+  .catch((err) => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
-  index
+  index,
+  show,
 }

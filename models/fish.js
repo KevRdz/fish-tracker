@@ -17,7 +17,8 @@ const fishSchema = new Schema({
   weight: Number,
   catchDate: Date,
   owner:  {type: Schema.Types.ObjectId, ref: "Profile"},
-  meals: [mealSchema]
+  meals: [mealSchema],
+  // profiles: [profileSchema]
 }, {
   timestamps: true
 })
