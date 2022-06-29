@@ -9,7 +9,7 @@
     <div>Weight (in lb):</div>
     <div><%= fish.weight %> </div>
     <div>Date Caught:</div>
-    <div><%= fish.dateCaught %> </div>
+    <div><%= fish.catchDate?.toISOString().slice(0,10) %></div>
     <div>Released?</div>
     <div><%= fish.caught ? 'Yes' : 'No'%> </div>
     <% if (fish.owner.equals(user?.profile._id)) { %>
@@ -23,13 +23,12 @@
           Delete this Fish
         </button>
       </form>
-    <% } %>
-  </section>
-  <h2>Make it into a Meal</h2>
-  <form action="/fishes/<%= fish._id %>/meals" method="POST">
-    <label for="text">Meal:</label>
-    <input name="name" required type="text">
-    <label for="text">Cook Time (min):</label>
+    </section>
+    <h2>Make it into a Meal</h2>
+    <form action="/fishes/<%= fish._id %>/meals" method="POST">
+      <label for="text">Meal:</label>
+      <input name="name" required type="text">
+      <label for="text">Cook Time (min):</label>
     <input name="cookTime" type="number">
     <label for="text">Style:</label>
     <input name="style" required type="text">
@@ -50,14 +49,15 @@
               <td><%= meal.cookTime %></td>
               <td><%= meal.style %></td>
             </tr>
-          <% }) %>
-        </tbody>
-      </table>
-    <% } else { %>
-      <h3>No Meals Yet</h3>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } else { %>
+          <h3>No Meals Yet</h3>
+          <% } %>
     <% } %>
-  </form>
-</main>
-
-
-<%- include("../partials/footer") %>
+        </form>
+      </main>
+      
+      
+      <%- include("../partials/footer") %>

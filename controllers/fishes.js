@@ -33,6 +33,7 @@ function show(req, res){
   Fish.findById(req.params.id)
   .populate("owner")
   .then(fish => {
+    console.log(fish)
     res.render('fishes/show', {
       fish: fish,
       title: "Fish Details"
@@ -62,6 +63,9 @@ function update(req, res) {
   Fish.findById(req.params.id)
   .then(fish => {
     if (fish.owner.equals(req.user.profile._id)){
+      for (const key in req.body){
+        req.body[key] === "" && delete req.body[key]
+      }
       req.body.caught = !!req.body.caught
       fish.updateOne(req.body, {new: true})
       .then(()=> {
