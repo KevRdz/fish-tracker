@@ -3,7 +3,7 @@
 
 
 
-  <h1>Fishees</h1>
+  <h1><%= title %> </h1>
   <% if (user) { %>
     <h2>Add a Fish you've caught</h2>
     <form action="/fishes" method="POST">
@@ -15,7 +15,8 @@
         Weight (in lb):
         <input type="text" name="weight">
       </label>
-      <label for="date-caught">Date Caught<input type="date" name="dateCaught"></label>
+      <label for="date-caught-input">Date Caught</label>
+      <input type="date" name="catchDate">
       <label for="caught-checkbox">Released?</label>
       <input type="checkbox" name="caught">
       <button type="submit">Add Fish</button>

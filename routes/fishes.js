@@ -4,14 +4,17 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-//GET localhost:3000/fishes
 router.get('/', fishesCtrl.index)
-
-router.get('/new', fishesCtrl.new)
 
 router.post('/', isLoggedIn, fishesCtrl.create)
 
+router.get('/new', fishesCtrl.new)
+
 router.get('/:id', fishesCtrl.show)
+
+router.put('/:id', isLoggedIn, fishesCtrl.update)
+
+router.get('/:id/edit', isLoggedIn, fishesCtrl.edit)
 
 
 export {

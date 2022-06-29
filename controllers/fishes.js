@@ -44,9 +44,45 @@ function show(req, res){
   })
 }
 
+function edit(req, res){
+  Fish.findById(req.params.id)
+  .then(fish => {
+    res.render('fishes/edit', {
+      fish,
+      title: "Edit Fish"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/fishes')
+  })
+}
+
+function update(req, res) {
+  Fish.findById(req.params.id)
+  .then(fish => {
+    if (fish.owner.equals(req.user.profile._id)){
+      req.body.caught = !!req.body.caught
+      fish.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/fishes/${fish._id}`)
+      })
+    } else {
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/fishes')
+  })
+}
+
 export {
   index,
   create,
   newFish as new,
   show,
+  edit,
+  update,
+
 }

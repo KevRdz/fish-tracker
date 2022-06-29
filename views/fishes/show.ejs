@@ -2,7 +2,24 @@
 <%- include("../partials/nav") %>
 
 <main>
-  <h1>Edit fishes</h1>
+  <h1><%= title %> </h1>
+  <section>
+    <div>Name:</div>
+    <div><%= fish.name %> </div>
+    <div>Weight (in lb):</div>
+    <div><%= fish.weight %> </div>
+    <div>Date Caught:</div>
+    <div><%= fish.dateCaught %> </div>
+    <div>Released?</div>
+    <div><%= fish.caught ? 'Yes' : 'No'%> </div>
+    <%# if (fish.owner.equals(user?.profile._id)) { %>
+      <form action="/fishes/<%= fish._id %>/edit" method="GET">
+        <button class="btn" type="submit">
+          Edit This Catch
+        </button>
+      </form>
+    <%# } %>
+  </section>
 </main>
 
 

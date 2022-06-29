@@ -1,0 +1,34 @@
+<%- include("../partials/html-head") %>
+<%- include("../partials/nav") %>
+
+
+<main>
+  <h1>Edit the fish! </h1>
+  <form action="/fishes/<%= fish._id %>?_method=PUT" method="POST">
+    <label>
+      Name: 
+      <input 
+        type="text"
+        name="name" 
+        value="<%= fish.name %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label for="weight-input">
+      Weight (in lb):
+      <input type="text" name="weight" value="<%= fish.weight %>" autocomplete="off">
+    </label>
+    <label for="date-caught">
+      Date Caught
+      <input type="date" name="catchDate" value="<%= fish.catchDate %>">
+    </label>
+    <label for="caught-checkbox">
+      Released?
+      <input type="checkbox" name="caught" value="<%= fish.caught ? 'checked' : ''%>">
+    </label>
+    <button type="submit">Edit the Fish</button>
+  </form>
+</main>
+
+
+<%- include("../partials/footer") %>
