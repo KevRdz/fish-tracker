@@ -14,6 +14,8 @@ router.get('/:id', fishesCtrl.show)
 
 router.put('/:id', isLoggedIn, fishesCtrl.update)
 
+router.delete('/:id', isLoggedIn, fishesCtrl.delete)
+
 router.get('/:id/edit', isLoggedIn, fishesCtrl.edit)
 
 

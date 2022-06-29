@@ -77,6 +77,24 @@ function update(req, res) {
   })
 }
 
+function deleteFish(req, res) {
+  Fish.findByIdAndDelete(req.params.id)
+  .then(fish => {
+    if (fish.owner.equals(req.user.profile._id)){
+      fish.delete()
+      .then(() => {
+        res.redirect('/fishes')
+      })
+    } else {
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/fishes')
+  })
+}
+
 export {
   index,
   create,
@@ -84,5 +102,5 @@ export {
   show,
   edit,
   update,
-
+  deleteFish as delete,
 }

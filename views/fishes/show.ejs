@@ -12,13 +12,18 @@
     <div><%= fish.dateCaught %> </div>
     <div>Released?</div>
     <div><%= fish.caught ? 'Yes' : 'No'%> </div>
-    <%# if (fish.owner.equals(user?.profile._id)) { %>
+    <% if (fish.owner.equals(user?.profile._id)) { %>
       <form action="/fishes/<%= fish._id %>/edit" method="GET">
         <button class="btn" type="submit">
           Edit This Catch
         </button>
       </form>
-    <%# } %>
+      <form action="/fishes/<%= fish._id %>?_method=DELETE">
+        <button class="btn" type="submit">
+          Delete this Fish
+        </button>
+      </form>
+    <% } %>
   </section>
 </main>
 
