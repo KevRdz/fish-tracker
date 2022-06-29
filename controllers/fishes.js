@@ -5,7 +5,7 @@ function index(req, res){
   .then(fishes => {
     res.render('fishes/index', {
       fishes: fishes,
-      title: "Fisshees",
+      title: "Fishes",
     })
   })
 }
@@ -35,7 +35,7 @@ function show(req, res){
   .then(fish => {
     res.render('fishes/show', {
       fish: fish,
-      title: "Fish Deetails"
+      title: "Fish Details"
     })
   })
   .catch(err => {
@@ -95,6 +95,17 @@ function deleteFish(req, res) {
   })
 }
 
+function createMeal(req, res){
+  Fish.findById(req.params.id)
+  .then(fish => {
+    fish.meals.push(req.body)
+    fish.save()
+    .then(() => {
+      res.redirect(`/fishes/${fish._id}`)
+    })
+  })
+}
+
 export {
   index,
   create,
@@ -103,4 +114,5 @@ export {
   edit,
   update,
   deleteFish as delete,
+  createMeal,
 }

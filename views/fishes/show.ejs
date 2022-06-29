@@ -18,13 +18,45 @@
           Edit This Catch
         </button>
       </form>
-      <form action="/fishes/<%= fish._id %>?_method=DELETE">
+      <form action="/fishes/<%= fish._id %>?_method=DELETE" method="POST">
         <button class="btn" type="submit">
           Delete this Fish
         </button>
       </form>
     <% } %>
   </section>
+  <h2>Make it into a Meal</h2>
+  <form action="/fishes/<%= fish._id %>/meals" method="POST">
+    <label for="text">Meal:</label>
+    <input name="name" required type="text">
+    <label for="text">Cook Time (min):</label>
+    <input name="cookTime" type="number">
+    <label for="text">Style:</label>
+    <input name="style" required type="text">
+    <button type="submit">Add Meal</button>
+    <% if (fish.meals.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Cook Time</th>
+            <th>Style</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% fish.meals.forEach(function(meal) { %>
+            <tr>
+              <td><%= meal.name%></td>
+              <td><%= meal.cookTime %></td>
+              <td><%= meal.style %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h3>No Meals Yet</h3>
+    <% } %>
+  </form>
 </main>
 
 

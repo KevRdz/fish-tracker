@@ -18,6 +18,8 @@ router.delete('/:id', isLoggedIn, fishesCtrl.delete)
 
 router.get('/:id/edit', isLoggedIn, fishesCtrl.edit)
 
+router.post('/:id/meals', fishesCtrl.createMeal)
+
 
 export {
   router
