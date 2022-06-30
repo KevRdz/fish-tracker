@@ -24,7 +24,8 @@
     </label>
     <label for="caught-checkbox">
       Released?
-      <input type="checkbox" name="caught" value="<%= fish.caught ? 'checked' : ''%>">
+      <input type="checkbox" name="caught"
+      <%= fish.caught ? 'checked' : '' %>>
     </label>
     <button type="submit">Edit the Fish</button>
   </form>
