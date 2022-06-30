@@ -13,6 +13,9 @@ function index(req, res){
 function create(req, res) {
   req.body.owner = req.user.profile._id
 	req.body.caught = !!req.body.caught
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
   Fish.create(req.body)
   .then(fish => {
     res.redirect('/fishes')
