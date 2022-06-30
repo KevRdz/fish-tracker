@@ -61,11 +61,12 @@ li{
   list-style-position: inside;
 }
 
-/* #points{
-  margin: 0%;
-} */
-
-/* button{
+.nav-img{
+  width: 30px;
   height: 30px;
-  width: 70px;
-} */
+}
+
+.points{
+  text-align: center;
+  /* margin: 0 1px; */
+}

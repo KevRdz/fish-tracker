@@ -5,13 +5,13 @@
 <body>
   <nav class="navbar">
     <% if (user) { %>
-      <a href="/">Home</a>
-      <a href="/profiles"><img src="/public/images/navbar/users.png"></a>
+      <a href="/"><img class="nav-img" src="/images/home.png" alt=""></a>
+      <a href="/profiles"><img class="nav-img" src="/images/users.png" sizes=""></a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
-      <a href="/fishes">View My Fish</a>
-      <a href="/fishes/new">Add A Fish</a>
+      <a href="/fishes"><img class="nav-img" src="/images/fish.png" alt=""></a>
+      <a href="/fishes/new"><img class="nav-img" src="/images/fish-hook.png" alt=""></a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">

@@ -5,7 +5,7 @@ function index(req, res){
   .then(fishes => {
     res.render('fishes/index', {
       fishes: fishes,
-      title: "Fishes",
+      title: "Fish List",
     })
   })
 }
