@@ -17,18 +17,22 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #00a5cf;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
+  color: #1f363d;
+  text-align: center;
 }
 
 nav {
-  background-color: white;
+  background-color: #00a5cf;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
+  height: 50px;
+  align-items: center;
 }
 
 main {
@@ -40,4 +44,28 @@ main {
 
 h1 {
   font-size: 3.6rem;
+  text-align: center;
 }
+
+img{
+  border-radius: 50%;
+}
+
+a{
+  margin: 10px 20px;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+li{
+  list-style-position: inside;
+}
+
+/* #points{
+  margin: 0%;
+} */
+
+/* button{
+  height: 30px;
+  width: 70px;
+} */

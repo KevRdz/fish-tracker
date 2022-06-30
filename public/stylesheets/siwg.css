@@ -27,6 +27,7 @@
   height: 0;
   overflow: hidden;
   z-index: -1;
+  border-radius: 10px;
   content: url(/images/auth/google/siwg_light_pressed.png)
     url(/images/auth/google/siwg_light_focus.png);
 }
