@@ -35,7 +35,7 @@
     <input name="style" required type="text">
     <button type="submit">Add Meal</button>
     <% if (fish.meals.length) { %>
-      <table>
+      <!-- <table>
         <thead>
           <tr>
             <th>Name</th>
@@ -43,21 +43,22 @@
             <th>Style</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody> -->
           <% fish.meals.forEach(function(meal) { %>
-                <td><%= meal.name%></td>
-                <td><%= meal.cookTime %></td>
-                <td><%= meal.style %></td>
-              </tr>
+              <ul>
+                Make <%= meal.style %> <%= fish.name %>  <%= meal.name%> in <%= meal.cookTime %>min 
+              <!-- </tr> -->
+            </ul>
             <% }) %>
-          </tbody>
-        </table>
+          <!-- </tbody>
+        </table> -->
         <% } else { %>
           <h3>No Meal Yet</h3>
           <% } %>
     <% } %>
         </form>
       </main>
+
       
       
       <%- include("../partials/footer") %>
