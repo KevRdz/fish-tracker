@@ -1,5 +1,5 @@
 <%- include("../partials/html-head") %>
-<link rel="stylesheet" href="/public/stylesheets/fishes/edit.css" />
+<!-- <link rel="stylesheet" href="/public/stylesheets/fishes/edit.css" /> -->
 <%- include("../partials/nav") %>
 
 
@@ -28,7 +28,10 @@
       <input type="checkbox" name="caught"
       <%= fish.caught ? 'checked' : '' %>>
     </label>
-    <button type="submit">Edit the Fish</button>
+    <div>
+
+      <button class="edit-btn" type="submit">Edit the Fish</button>
+    </div>
   </form>
 </main>
 

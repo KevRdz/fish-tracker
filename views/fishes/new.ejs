@@ -1,5 +1,5 @@
 <%- include("../partials/html-head") %>
-<link rel="stylesheet" href="/public/stylesheets/fishes/new.css" />
+<!-- <link rel="stylesheet" href="/public/stylesheets/fishes/new.css" /> -->
 <%- include("../partials/nav") %>
 
 
@@ -16,12 +16,21 @@
         Weight (in lb):
         <input type="text" name="weight">
       </label>
-      <label for="date-caught-input">Date Caught</label>
-      <input type="date" name="catchDate">
-      <label for="caught-checkbox">Released?</label>
-      <input type="checkbox" name="caught">
-      <button type="submit">Add Fish</button>
-    </form>
+      <div>
+        <label  for="date-caught-input">Date Caught</label>
+        <input class="date" type="date" name="catchDate">
+      </div>
+      <div>
+        <label for="caught-checkbox">Released?</label>
+        <input type="checkbox" name="caught">
+      </div>
+        <div>
+        <button class="btn" type="submit">Add Fish</button>
+      </div>
+      </form>
   <% } %>
+
+        
+
 
   <%- include("../partials/footer") %>

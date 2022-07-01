@@ -28,7 +28,7 @@ function create(req, res) {
 
 function newFish(req, res){
   res.render("fishes/new", {
-    title: "Add Fishes"
+    title: "Add A Fish"
   })
 }
 

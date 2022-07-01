@@ -1,5 +1,5 @@
 <%- include("../partials/html-head") %>
-<link rel="stylesheet" href="/public/stylesheets/fishes/show.css" />
+<!-- <link rel="stylesheet" href="/public/stylesheets/fishes/show.css" /> -->
 <%- include("../partials/nav") %>
 
 <main>
@@ -27,7 +27,7 @@
     </section>
     <h2>Make it into a Meal</h2>
     <form action="/fishes/<%= fish._id %>/meals" method="POST">
-      <label for="text">Meal:</label>
+      <label for="text">Name:</label>
       <input name="name" required type="text">
       <label for="text">Cook Time (min):</label>
     <input name="cookTime" type="number">
@@ -45,16 +45,15 @@
         </thead>
         <tbody>
           <% fish.meals.forEach(function(meal) { %>
-            <tr>
-              <td><%= meal.name%></td>
-              <td><%= meal.cookTime %></td>
-              <td><%= meal.style %></td>
-            </tr>
+                <td><%= meal.name%></td>
+                <td><%= meal.cookTime %></td>
+                <td><%= meal.style %></td>
+              </tr>
             <% }) %>
           </tbody>
         </table>
         <% } else { %>
-          <h3>No Meals Yet</h3>
+          <h3>No Meal Yet</h3>
           <% } %>
     <% } %>
         </form>
